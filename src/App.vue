@@ -1,17 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <app-bar
+      @showMenu="drawer = $emit"
+      class="mb-12 pb-12"
+    />
+
+    <div id="app">
+      <img alt="Vue logo" src="./assets/logo.png">
+      <HelloWorld msg="Welcome to Your Vue.js App"/>
+    </div>
+
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppBar from "@/components/AppBar.vue";
+import HelloWorld from './views/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AppBar,
+    HelloWorld,
   }
 }
 </script>
