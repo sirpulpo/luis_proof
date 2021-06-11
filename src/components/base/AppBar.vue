@@ -1,9 +1,9 @@
 <template>
-  <v-app-bar app dense fixed elevation="9" dark hide-on-scroll>
+  <v-app-bar app dense fixed elevation="9" dark>
     <v-app-bar-nav-icon
       color="green"
       @click.stop="$emit('showMenu', true)"
-    ></v-app-bar-nav-icon>
+    />
 
     <v-app-bar-title> SHS </v-app-bar-title>
 
@@ -12,11 +12,10 @@
     <div class="mt-6">
       <v-switch
 				inset
-        :label="switch_theme_text"
         :append-icon="switch_theme_icon"
         color="green"
         v-model="$vuetify.theme.dark"
-      ></v-switch>
+      />
     </div>
   </v-app-bar>
 </template>

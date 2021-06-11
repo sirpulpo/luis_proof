@@ -2,11 +2,11 @@
   <v-list nav dense>
     <v-list-item>
       <v-list-item-avatar>
-        <v-img src="../assets/shs_logo.jpg"></v-img>
+        <v-img src="../../assets/shs_logo.jpg"></v-img>
       </v-list-item-avatar>
     </v-list-item>
 
-    <v-divider></v-divider>
+    <v-divider />
 
     <v-list-item-group
       v-model="group"
@@ -41,17 +41,17 @@ export default {
       items: [
         {
           title: "Inicio",
-          icon: "mdi-view-dashboard",
+          icon: "mdi-vuejs",
           route: "/"
         },
         {
           title: "Formulario",
-          icon: "mdi-book-account-outline",
+          icon: "mdi-text-box-check-outline",
           route: "/form",
         },
         {
           title: "Gráficas",
-          icon: "mdi-calendar-multiple",
+          icon: "mdi-chart-bar",
           route: "/charts",
         },
       ],
