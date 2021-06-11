@@ -1,38 +1,41 @@
 <template>
   <v-app>
-    <app-bar
-      @showMenu="drawer = $emit"
-      class="mb-12 pb-12"
-    />
+    <app-bar @showMenu="drawer = $emit" class="mb-12 pb-12" />
 
-    <div id="app">
-      <img alt="Vue logo" src="./assets/logo.png">
-      <HelloWorld msg="Welcome to Your Vue.js App"/>
-    </div>
+    <v-navigation-drawer dark v-model="drawer" fixed temporary>
+      <menu-bar @offMenu="drawer = false" />
+    </v-navigation-drawer>
 
+    <router-view class="mt-12" />
+
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import AppBar from "@/components/AppBar.vue";
-import HelloWorld from './views/HelloWorld.vue'
+import MenuBar from "@/components/MenuBar.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+
   components: {
     AppBar,
-    HelloWorld,
-  }
-}
+    MenuBar,
+    Footer
+  },
+
+  data() {
+    return {
+      drawer: false,
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+a:link {
+  text-decoration: none;
 }
 </style>

@@ -5,33 +5,30 @@
       @click.stop="$emit('showMenu', true)"
     ></v-app-bar-nav-icon>
 
-    <v-app-bar-title> APCS </v-app-bar-title>
+    <v-app-bar-title> SHS </v-app-bar-title>
 
     <v-spacer />
-    
-    <!-- <v-badge overlap dot color="amber" class="mx-2">
-      <v-btn icon class="mx-n2">
-        <v-icon>mdi-calendar-alert</v-icon>
-      </v-btn>
-    </v-badge> -->
 
-    <v-badge
-      :content="alertState"
-      :value="alertState"
-      overlap
-      dot
-      color="red"
-      class="mx-2"
-    >
-      <v-btn v-if="alertState" icon class="mx-n2" @click="showAlert()">
-        <v-icon>mdi-bell-alert-outline</v-icon>
-      </v-btn>
-    </v-badge>
+    <div class="mt-6">
+      <v-switch
+				inset
+        :label="switch_theme_text"
+        :append-icon="switch_theme_icon"
+        color="green"
+        v-model="$vuetify.theme.dark"
+      ></v-switch>
+    </div>
   </v-app-bar>
 </template>
 
 <script>
 export default {
-    name: "AppBar",
-}
+  name: "AppBar",
+
+	computed: {
+		switch_theme_icon() {
+      return this.$vuetify.theme.dark ? "mdi-lightbulb-on-outline" : "mdi-brightness-4";
+    }
+	},
+};
 </script>
