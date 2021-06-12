@@ -14,4 +14,14 @@ new Vue({
   vuetify, // Se pasa como argumento la configuración de Vuetify
   store,
   render: (h) => h(App),
+
+  methods: {
+    increment() {
+      this.$store.commit('increment')
+      console.log(this.$store.state.count)
+    }
+  }
+
 }).$mount("#app");
+
+
