@@ -1,5 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
+import store from "./components/store"
 
 // Se importa el archivo index.js que esta dentro de /router, el cual contiene la configuración de Vue-Router
 import router from "./router";
@@ -11,5 +12,6 @@ Vue.config.productionTip = false;
 new Vue({
   router, // Se pasa como argumento la configuración de Vue-Router
   vuetify, // Se pasa como argumento la configuración de Vuetify
+  store,
   render: (h) => h(App),
 }).$mount("#app");

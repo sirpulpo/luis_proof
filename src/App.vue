@@ -12,7 +12,11 @@
 
     <!-- Componente - Pié de página -->
     <Footer />
+
+    <Store/>
+
   </v-app>
+
 </template>
 
 <script>
